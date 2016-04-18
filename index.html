@@ -1,0 +1,63 @@
+<html>
+<head>
+	<title>internet is amazing</title>
+	<meta charset="UTF-8">
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+
+	<style> body {padding: 0; margin: 0; font-size: 100%;} </style>
+</head>
+<body>
+<footer style="position: fixed;bottom: 1% ; right: 1% ; font-size:1.3vw ;color:#3b5998;opacity: 0.8; font-family:helvetica, arial, sans-serif; font-weight:bold;">made out of procrastination</footer>
+</body>
+<script>
+	var lol = ["Hey!", "LOOK!", "Serious shit to read here", "hep hep", "come on!", "THIS", "woow", "amazing!", "OMG", "Learn this!", "fuun!", "so greaat", "perfect!", "clik to make mum proud", "u shuld know this", "good shit", "make love tonight", "click pliz", "good music here", "come", "enlarge ur mom", "read that", "best that", "best this", "learn tango real fast", "how to philosophy good", "Hey!", "LOOK!", "Serious shit to read here", "hep hep", "come on!", "THIS", "woow", "amazing!", "OMG", "Learn this!", "fuun!", "so greaat", "perfect!", "clik to make mum proud", "u shuld know this", "good shit", "make love tonight", "click pliz", "good music here", "come", "enlarge ur mom", "read that", "best that", "best this", "learn tango real fast", "how to philosophy good", "Hey!", "LOOK!", "Serious shit to read here", "hep hep", "come on!", "THIS", "woow", "amazing!", "OMG", "Learn this!", "fuun!", "so greaat", "perfect!", "clik to make mum proud", "u shuld know this", "good shit", "make love tonight", "click pliz", "good music here", "come", "enlarge ur mom", "read that", "best that", "best this", "learn tango real fast", "how to philosophy good", "Hey!", "LOOK!", "Serious shit to read here", "hep hep", "come on!", "THIS", "woow", "amazing!", "OMG", "Learn this!", "fuun!", "so greaat", "perfect!", "clik to make mum proud", "u shuld know this", "good shit", "make love tonight", "click pliz", "good music here", "come", "enlarge ur mom", "read that", "best that", "best this", "learn tango real fast", "how to philosophy good", "Hey!", "LOOK!", "Serious shit to read here", "hep hep", "come on!", "THIS", "woow", "amazing!", "OMG", "Learn this!", "fuun!", "so greaat", "perfect!", "clik to make mum proud", "u shuld know this", "good shit", "make love tonight", "click pliz", "good music here", "come", "enlarge ur mom", "read that", "best that", "best this", "learn tango real fast", "how to philosophy good", "Hey!", "LOOK!", "Serious shit to read here", "hep hep", "come on!", "THIS", "woow", "amazing!", "OMG", "Learn this!", "fuun!", "so greaat", "perfect!", "clik to make mum proud", "u shuld know this", "good shit", "make love tonight", "click pliz", "good music here", "come", "enlarge ur mom", "read that", "best that", "best this", "learn tango real fast", "how to philosophy good"];
+
+	$(document).ready(function(){
+
+		var lastIterDate = Date.now();
+		var date= Date.now();
+		var time;
+		document.onmousemove=function(e){
+
+			
+			date = Date.now();
+			//console.log("lastIterDate : " + lastIterDate + " date : " + date);
+			time = date - lastIterDate;
+			if(time>100){
+				lastIterDate = Date.now();
+				var mousx =e.clientX;
+				var mousy=e.clientY;
+				var span ;
+				var spanx ;
+				var spany ;
+				var angle;
+
+				$("p").each(function(){
+					span = $(this).position();
+					spanx = span.left;
+					spany = span.top;
+					dx = mousx - spanx;
+					dy = mousy - spany;
+					angle = Math.atan(dy/dx);
+					d = Math.sqrt(Math.pow(dx, 2) + Math.pow(dy, 2));
+					$(this).css({"-webkit-transform": "rotate("+angle+"rad) scale("+d*0.002+") translateZ(0)", "-moz-transform": "rotate("+angle+"rad) scale("+d*0.002+")"});
+				});
+			};
+		}
+		for (var i = 0; i < 50; i++) {
+			var stupid = $("<p></p>");
+			stupid.html(lol[i]);
+			stupid.css({"display":"inline-block","position": "fixed","top": random(5,95)+ "%", "left": random(5,95)+"%", "font-size": "1.5em","color":"#3b5998", "font-family":"helvetica, arial, sans-serif", "font-weight":"bold","-webkit-transition":"all 100ms ease","moz-transition":"all 100ms ease","-moz-transform": "rotate(0rad) scale(1)" ,"webkit-font-smoothing": "subpixel-antialiased"})
+			$("body").append(stupid);
+		}
+
+
+	});
+
+	function random(min, max) {
+		return Math.floor(Math.random() * (max - min +1)) + min;
+	}
+
+</script>
+</html>
